@@ -51,7 +51,8 @@ cmake -G Ninja ../llvm \
 # Optionally, using ASAN/UBSAN can find bugs early in development, enable with:
 # -DLLVM_USE_SANITIZER="Address;Undefined" 
 # Optionally, enabling integration tests as well
-# -DMLIR_INCLUDE_INTEGRATION_TESTS=ON
+# and enable execution engine since it is used by tests 
+# -DMLIR_INCLUDE_INTEGRATION_TESTS=ON -DMLIR_ENABLE_EXECUTION_ENGINE=ON
 cmake --build . --target check-mlir
 ```
 
